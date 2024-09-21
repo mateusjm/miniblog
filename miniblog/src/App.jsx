@@ -1,13 +1,19 @@
+import './App.css'
 import { useState } from 'react'
 
 // CSS
-import './App.css'
 import { Outlet } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   return (
     <>
-      <Outlet/>
+      <Navbar/>
+        <div className='container'>
+          <Outlet/>
+        </div>
+      <Footer/>
     </>
   )
 }
