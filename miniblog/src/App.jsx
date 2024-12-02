@@ -1,41 +1,16 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import './App.css'
-import { useEffect, useState } from 'react'
-import { onAuthStateChanged } from 'firebase/auth'
-
-// hooks
-import { useAuthentication } from './hooks/useAuthentication'
-
-// CSS
-import { Outlet } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
 
 function App() {
-
-  const [user, setUser] = useState(undefined)
-  const {auth} = useAuthentication()
-
-  const loadingUser = user === undefined
-
-  useEffect(()=> {
-
-    onAuthStateChanged(auth, (user)=> {
-      setUser(user)
-    })
-
-  }, [auth])
-
-  if (loadingUser) {
-    return <p>Carregando...</p>
-  }
+  const [count, setCount] = useState(0)
 
   return (
     <>
-      <Navbar/>
-        <div className='container'>
-          <Outlet/>
-        </div>
-      <Footer/>
+      <div>
+        <h1>Miniblog</h1>
+      </div>
     </>
   )
 }
