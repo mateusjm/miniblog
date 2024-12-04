@@ -5,3 +5,7 @@
 .register p {
   color: #aaa;
 }
+
+.register input {
+  font-size:1em;
+}
