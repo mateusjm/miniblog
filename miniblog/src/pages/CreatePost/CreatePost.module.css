@@ -14,3 +14,7 @@
 .create_post input {
   font-size:1em;
 }
+
+.create_post textarea {
+  font-size:1em;
+}
